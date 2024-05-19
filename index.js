@@ -2,6 +2,7 @@ let expenses = []; //список трат
 const input = document.getElementById('js-input-expenses');
 const button = document.getElementById('js-input-btn');
 const historyList = document.getElementById('js-history__list');
+const sumElement = document.getElementById('js-sum');
 
 button.addEventListener('click', function(){
 
@@ -19,10 +20,16 @@ button.addEventListener('click', function(){
     //3 вывод списка
     let html = '';
     expenses.forEach(expense => {
-       const elementHtml  = `<li>${expense}</li>`; //задаем шаблон строки
-       html += elementHtml; // выводим поочередно каждый новый эелемент
-        
+      html  += `<li>${expense} руб.</li>`; //задаем шаблон строки, выводим поочередно каждый новый эелемент
     });
     historyList.innerHTML = `<ol>${html}</ol>`;
+
+    //подсчет суммы и вывод 
+    let sum = 0;
+    expenses.forEach(expense => {
+       sum += expense; //пробегаю по массиву
+      });
+      sumElement.innerText = sum;//выводим сумму
+
 
 });
