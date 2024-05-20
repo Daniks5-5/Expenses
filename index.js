@@ -39,10 +39,10 @@ button.addEventListener('click', function(){
 
       //5 вывод статуса
     if(sum>LIMIT){
-        status.innerHTML = `<p class = "status-inner"> Всё плохо </p>`;
+        status.innerHTML = `<p class = "status-inner-bad"> Всё плохо </p>`;
     }
     else{
-        status.innerHTML = `<p class = "status-inner-bad">Всё хорошо </p>`;
+        status.innerHTML = `<p class = "status-inner">Всё хорошо </p>`;
     }
 
 
