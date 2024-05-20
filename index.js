@@ -6,6 +6,7 @@ const historyList = document.getElementById('js-history__list');
 const sumElement = document.getElementById('js-sum');
 const limit = document.getElementById('js-limit');
 const sumLimit =  document.getElementById('js-limit');
+const status = document.getElementById('js-status');
 
 limit.innerText = LIMIT;
 
@@ -35,6 +36,14 @@ button.addEventListener('click', function(){
        sum += expense; //пробегаю по массиву
       });
       sumElement.innerText = `${sum} рублей`;//выводим сумму
+
+      //5 вывод статуса
+    if(sum>LIMIT){
+        status.innerHTML = `<p class = "status-inner"> Всё плохо </p>`;
+    }
+    else{
+        status.innerHTML = `<p class = "status-inner-bad">Всё хорошо </p>`;
+    }
 
 
 });
