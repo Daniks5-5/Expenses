@@ -1,8 +1,13 @@
 let expenses = []; //список трат
+const LIMIT = 20000;
 const input = document.getElementById('js-input-expenses');
 const button = document.getElementById('js-input-btn');
 const historyList = document.getElementById('js-history__list');
 const sumElement = document.getElementById('js-sum');
+const limit = document.getElementById('js-limit');
+const sumLimit =  document.getElementById('js-limit');
+
+limit.innerText = LIMIT;
 
 button.addEventListener('click', function(){
 
@@ -24,12 +29,12 @@ button.addEventListener('click', function(){
     });
     historyList.innerHTML = `<ol>${html}</ol>`;
 
-    //подсчет суммы и вывод 
+    //4 подсчет суммы и вывод 
     let sum = 0;
     expenses.forEach(expense => {
        sum += expense; //пробегаю по массиву
       });
-      sumElement.innerText = sum;//выводим сумму
+      sumElement.innerText = `${sum} рублей`;//выводим сумму
 
 
 });

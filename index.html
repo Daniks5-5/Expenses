@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/reset.css">
 
     <title>Document</title>
 </head>
@@ -11,6 +12,10 @@
     <div class="main">
         <input type="number" id="js-input-expenses" class="main__input">
         <button id="js-input-btn" class="main__button">Добавить</button>
+        <div class="limit">
+            <p>Лимит: <span class="limit-css" id = "js-limit"></span></p>
+            <p>Сумма: <span class="limit-sum" id = "js-limit-sum"></span></p>
+        </div>
 
         <div class="history">
             <ol class="history__list" id = "js-history__list">
