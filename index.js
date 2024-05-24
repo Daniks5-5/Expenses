@@ -12,6 +12,7 @@ const limit = document.getElementById('js-limit');
 const sumLimit =  document.getElementById('js-limit');
 const status = document.getElementById('js-status');
 const allSum = document.getElementById('js-limit-sum');
+const cleanButton = document.getElementById('js-clean-btn');
 
 limit.innerText = LIMIT;
 
@@ -23,6 +24,10 @@ button.addEventListener('click', function(){
     renderStatus(expenses);
     renderHistory(expenses);
     renderSum(expenses);
+});
+cleanButton.addEventListener('click', function(){
+    clean();
+
 });
 
 function init(expenses){
@@ -51,7 +56,7 @@ function renderHistory(expenses) {
 
 function renderSum(expenses){
     sumElement.innerText = calculateExpenses(expenses)+`${valute}`;//выводим сумму
-}
+};
 function renderStatus(expenses){  //5 вывод статуса
     if(calculateExpenses(expenses)>LIMIT){
         status.innerHTML = `<p class = "status-inner-bad"> ${STATUS_BAD} </p>`;
@@ -59,7 +64,7 @@ function renderStatus(expenses){  //5 вывод статуса
     else{
         status.innerHTML = `<p class = "status-inner"> ${STATUS_GOOD} </p>`;
     }
-}
+};
 function inputValue(input){
     //1 получение значения с input
     if(!input.value){ //проверка, если input пустой, о ничего не выводим в массив
@@ -69,4 +74,10 @@ function inputValue(input){
     const expense = parseInt(input.value);//получаем что ввёл пользователь
     input.value = ''; //сброс значения в input после нажатия кнопки "Добавить"
     expenses.push(expense);//для добавления значений в массив
+};
+
+//чистка лимита
+function clean(){
+    historyList.innerHTML = `<ol></ol>`;
+    sumElement.innerText = 0;
 }
