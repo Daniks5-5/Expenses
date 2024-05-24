@@ -79,5 +79,7 @@ function inputValue(input){
 //чистка лимита
 function clean(){
     historyList.innerHTML = `<ol></ol>`;
+    expenses.length = 0;
     sumElement.innerText = 0;
+    status.innerHTML = ``;
 }
