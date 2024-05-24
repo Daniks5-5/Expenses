@@ -59,7 +59,7 @@ function renderSum(expenses){
     withdrawCalc.innerHTML = `<p class="calc">${calculateExpenses(expenses)} ${valute}</p>`;//выводим сумму
 };
 function renderStatus(expenses){  //5 вывод статуса
-    if(calculateExpenses(expenses)>LIMIT){
+    if(calculateExpenses(expenses)>sumLimit.value){
         withdraw.innerHTML = `<p class = "status-inner-bad"> ${STATUS_BAD} </p>`;
     }
     else{

@@ -21,11 +21,13 @@ color: #950f0f;
 }
 
 .main{
+ 
     margin: 0% auto;
     max-width: 1150px;
     width: 100%; 
 }
 .content{
+    margin-top: 70px;
     display: flex;
     flex-direction: row;
     gap:1em;
@@ -91,17 +93,21 @@ font-weight: 400;
 font-size: 30px;
 color: #fff;
 }
-.limit-css {
+.limit-css  {
     display: flex;
     font-family: var(--font-family);
 font-weight: 400;
 font-size: 30px;
 color: #fff;
 margin-bottom: 20px;
+background-color: rgba(0, 0, 0, 0);
+outline:none !important;
+border: none;
 }
 .status-flex{
     display: flex;
     flex-direction: row;
+ 
 }
 
 .limit-sum {
