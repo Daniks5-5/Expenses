@@ -13,7 +13,8 @@ const sumLimit =  document.getElementById('js-limit');
 const status = document.getElementById('js-status');
 const allSum = document.getElementById('js-limit-sum');
 const cleanButton = document.getElementById('js-clean-btn');
-
+const withdraw = document.getElementById('status-inner');
+const withdrawCalc = document.getElementById('calc');
 limit.innerText = LIMIT;
 
 init(expenses);
@@ -31,8 +32,8 @@ cleanButton.addEventListener('click', function(){
 });
 
 function init(expenses){
-    sumElement.innerText = 0;
-    sumElement.innerText = calculateExpenses(expenses);
+  
+    withdrawCalc.innerText = calculateExpenses(expenses);
 };
 
 function calculateExpenses(expenses){
@@ -55,14 +56,14 @@ function renderHistory(expenses) {
 };
 
 function renderSum(expenses){
-    sumElement.innerText = calculateExpenses(expenses)+`${valute}`;//выводим сумму
+    withdrawCalc.innerHTML = `<p class="calc">${calculateExpenses(expenses)} ${valute}</p>`;//выводим сумму
 };
 function renderStatus(expenses){  //5 вывод статуса
     if(calculateExpenses(expenses)>LIMIT){
-        status.innerHTML = `<p class = "status-inner-bad"> ${STATUS_BAD} </p>`;
+        withdraw.innerHTML = `<p class = "status-inner-bad"> ${STATUS_BAD} </p>`;
     }
     else{
-        status.innerHTML = `<p class = "status-inner"> ${STATUS_GOOD} </p>`;
+        withdraw.innerHTML = `<p class = "status-inner"> ${STATUS_GOOD} </p>`;
     }
 };
 function inputValue(input){
@@ -80,6 +81,6 @@ function inputValue(input){
 function clean(){
     historyList.innerHTML = `<ol></ol>`;
     expenses.length = 0;
-    sumElement.innerText = 0;
-    status.innerHTML = ``;
+    withdrawCalc.innerText = 0;
+    withdraw.innerHTML = ``;
 }

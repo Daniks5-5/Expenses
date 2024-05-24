@@ -10,25 +10,52 @@
 </head>
 <body>
     <div class="main">
-        <input type="number" id="js-input-expenses" class="main__input">
-        <button id="js-input-btn" class="main__button">Добавить</button>
-        <div class="limit">
-            <p>Лимит: <span class="limit-css" id = "js-limit"></span></p>
-            <p>Сумма: <span class="limit-sum" id = "js-limit-sum"></span></p>
-            <p>Статус: <span class="status" id = "js-status"></span></p>
-            <button class = "history-clean" id = "js-clean-btn">очистить</button>
+        <div class="content">
+        <div class="left">
+            <div class="margin-left">
+                <h1 class="left__title">Учет расходов</h1>
+            <div class="input-btn">
+                <input type="number" id="js-input-expenses" class="main__input" placeholder="руб.">
+                <button id="js-input-btn" class="main__button">Добавить</button>
+            </div>
+         
+            <div class="limit">
+                <p class="limit-css">Лимит: <span class="limit-css" id = "js-limit"></span></p>
+                <div class="sum-flex">
+                    <p class="limit-css" >Потрачено: <span class="limit-sum" id = "js-limit-sum"></span></p>
+                    <p class="calc" id="calc"></p>
+                </div>
+               
+                <div class="status-flex">
+                    <p class="limit-css">Статус: <span class="status" id = "js-status"></span></p>
+                    <p class = "status-inner" id="status-inner"></p>
+                </div>
+                
+               
+                
 
+                <div class="sum">
+                    <p class="sum__text"><span id="js-sum"></span></p>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="right">
+                <div class="history">
+                    <div class="margin-right">
+                        <h1 class="history__title">История расходов</h1>
+                    <ol class="history__list" id = "js-history__list">
+                    </ol>
+                    <button class = "history-clean" id = "js-clean-btn">Очистить</button>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
 
-        <div class="history">
-            <ol class="history__list" id = "js-history__list">
-            </ol>
-        </div>
-        <div class="sum">
-            <p class="sum__text"><span id="js-sum"></span></p>
-        </div>
-    </div>
-    
+        
+        </div> 
+   
     <script src="index.js"></script>
 </body>
 </html>
